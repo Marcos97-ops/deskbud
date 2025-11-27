@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deskbud - Detector de Atenção</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="camera-area">
+        <h1>Detector de Atenção</h1>
+        
+        <div id="cameraCircle" class="camera">
+          <span style="color: #555; font-size: 14px;">Câmera desligada</span>
+        </div>
+
+        <h2 id="status-display">Status: Aguardando...</h2>
+
+        <div id="stats-container">
+          <div class="stat-box atento-stat">
+            <strong>Atento</strong>
+            <span id="atento-percent">0%</span>
+          </div>
+          <div class="stat-box desatento-stat">
+            <strong>Desatento</strong>
+            <span id="desatento-percent">0%</span>
+          </div>
+          <div class="stat-box ausente-stat">
+            <strong>Ausente</strong>
+            <span id="ausente-percent">0%</span>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button id="startCameraBtn" class="button start">🎥 Iniciar Câmera</button>
+          <button id="stopCameraBtn" class="button stop" disabled>🛑 Parar Câmera</button>
+        </div>
+      </div>
+
+      <div class="instructions-area">
+        <h1 class="instructions-title">Como funciona?</h1>
+        <div class="sections">
+          <div class="section">
+            <ul>
+              <li>1. A IA analisa sua pose via webcam.</li>
+              <li>2. O status é atualizado em tempo real.</li>
+              <li>✅ ATENTO: Postura ereta, olhando para frente.</li>
+              <li>❌ DESATENTO: Cabeça baixa, olhando pro lado.</li>
+              <li>🤷‍♂️ AUSENTE: Ninguém detectado na câmera.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
